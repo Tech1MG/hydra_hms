@@ -1,0 +1,48 @@
+{% extends 'management/base.html' %}
+
+{% block main %}
+  <main>
+    <section id="create-treatment">
+      <h2>Create Patient Treatment</h2>
+      <form action="#" method="post" class="treatment-form">
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="patient_name">Patient Name</label>
+          <select id="patient_name" name="patient_name" class="searchable-select" required>
+            <option value="" disabled selected>Select patient</option>
+            <option value="1">John Doe</option>
+            <option value="2">Jane Smith</option>
+            <option value="3">Sam Brown</option>
+            <option value="4">Emily White</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="case_description">Case Description</label>
+          <textarea id="case_description" name="case_description" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="investigations">Investigations</label>
+          <textarea id="investigations" name="investigations" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="diagnosis">Diagnosis</label>
+          <textarea id="diagnosis" name="diagnosis" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="prescription">Prescription</label>
+          <textarea id="prescription" name="prescription" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="followup_note">Follow-up Note</label>
+          <textarea id="followup_note" name="followup_note" rows="3" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </section>
+  </main>
+{% endblock %}

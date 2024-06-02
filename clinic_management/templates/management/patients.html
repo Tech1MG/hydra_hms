@@ -1,0 +1,40 @@
+{% extends 'management/base.html' %}
+{% block main %}
+  <main>
+    <section id="patients">
+      <div class="section-header">
+        <h2>Patient List</h2>
+        <a href="{% url 'patients_new' %}" class="btn">Add New Patient</a>
+      </div>
+      <table class="patients-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Last Visit</th>
+            <th>Remark</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for patient in patients %}
+            <tr>
+              <td>
+                <a href="{% url 'patients_detail' patient.id %}">{{ patient.name }}</a>
+              </td>
+
+              <td>{{ patient.age }}</td>
+              <td>{{ patient.phone }}</td>
+              <td>-</td>
+              <td>{{ patient.note }}</td>
+              <td>
+                <a href="{% url 'patients_edit' patient.id %}" class="edit-btn">Edit</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+{% endblock %}

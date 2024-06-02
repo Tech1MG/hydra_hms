@@ -1,0 +1,55 @@
+{% extends 'management/base.html' %}
+
+{% block main %}
+  <main>
+    <section id="create-patient">
+      <h2>Updating {{ patient.name }}</h2>
+      <form action="#" method="post" class="patient-form">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" value="{{ patient.name }}" required />
+        </div>
+        <div class="form-group">
+          <label for="birth_year">Birth Year</label>
+          <input type="number" id="birth_year" name="birth_year" value="{{ patient.birth_year }}" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" value="{{ patient.phone }}" required />
+        </div>
+        <div class="form-group">
+          <label for="note">Note</label>
+          <textarea id="note" name="note" rows="3">{{ patient.note }}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="medical_histories">Medical Histories</label>
+          <textarea id="medical_histories" name="medical_histories" rows="3">{{ patient.histories }}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="drug_allergies">Drug Allergies</label>
+          <textarea id="drug_allergies" name="drug_allergies" rows="3">{{ patient.allergies }}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="current_medications">Current Medications</label>
+          <textarea id="current_medications" name="current_medications" rows="3">{{ patient.medications }}</textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn" style="
+          width: 100%;
+          text-align: center;">Update</button>
+
+          <a href="/management/patients/" class="btn" style="
+          width: 100%;
+          text-align: center; 
+          margin-top: 10px;
+          background-color: red;
+          border-color:grey;
+          border-style: solid;
+          border-radius: 5px;
+          ">Cancel</a>
+        </div>
+      </form>
+    </section>
+  </main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "management/base.html" %}
+{% block main %}
+  <main>
+    <section id="overview">
+      <h2>Welcome, {{ request.user.name }}</h2>
+      <div class="stats-container">
+        <div class="stat">
+          <h3>Today's Total Patients</h3>
+          <p>50</p>
+        </div>
+        <div class="stat">
+          <h3>New Patients</h3>
+          <p>20</p>
+        </div>
+        <div class="stat">
+          <h3>Old Patients</h3>
+          <p>30</p>
+        </div>
+        <div class="stat">
+          <h3>Upcoming Appointments</h3>
+          <p>15</p>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

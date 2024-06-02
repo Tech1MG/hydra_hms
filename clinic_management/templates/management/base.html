@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MD Management System</title>
+    <link rel="stylesheet" href="{% static "css/admin.css" %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MD Clinic Dashboard</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "patients" %}">Patients</a></li>
+                <li><a href="{% url "appointments" %}">Appointments</a></li>
+                <li><a href="{% url "logout" %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block main %}{% endblock main %}
+    
+    <footer>
+        <p>&copy; 2024 Hospital Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
